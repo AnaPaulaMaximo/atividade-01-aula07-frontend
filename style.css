@@ -1,0 +1,544 @@
+/* ==========================================================
+   Atividade 01 - style.css (CSS externo via <link>)
+   Parte 1: Box Model (Content, Padding, Border, Margin)
+   Parte 2: 20 propriedades de Flexbox
+   ========================================================== */
+
+* { box-sizing: content-box; } /* content-box: width/height = apenas o Content */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f3f5;
+  color: #222;
+  margin: 0;
+}
+
+/* ---------- PARTE 2: FLEXBOX (20 propriedades) ---------- */
+
+/* Cabeçalho */
+.cabecalho {
+  display: flex;                    /* 1  display: flex */
+  justify-content: space-between;   /* 5  justify-content */
+  align-items: center;              /* 6  align-items */
+  background: #264653;
+  color: #fff;
+  padding: 16px 32px;
+}
+.cabecalho h1 { margin: 0; }
+
+/* Menu */
+.menu {
+  display: inline-flex;             /* 19 inline-flex */
+  gap: 20px;                        /* 8  gap */
+}
+.menu a { color: #fff; text-decoration: none; font-weight: bold; }
+
+/* Container principal com as 20 caixas */
+.container {
+  display: flex;
+  flex-direction: row;              /* 2  flex-direction */
+  flex-wrap: wrap;                  /* 3  flex-wrap */
+  flex-flow: row wrap;              /* 4  flex-flow (atalho de direction + wrap) */
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;        /* 7  align-content */
+  row-gap: 10px;                    /* 9  row-gap */
+  column-gap: 10px;                 /* 10 column-gap */
+  padding: 20px;
+}
+
+/* Seção extra: demonstra as demais propriedades */
+.extras {
+  display: flex;
+  flex-wrap: wrap-reverse;          /* 20 wrap-reverse */
+  place-content: center;            /* 17 place-content (align-content + justify-content) */
+  place-items: stretch;             /* 18 place-items (align-items + justify-items) */
+  gap: 12px;
+  min-height: 160px;
+  background: #dee2e6;
+  padding: 20px;
+}
+.extra {
+  background: #2a9d8f;
+  color: #fff;
+  padding: 20px;
+  border: 3px solid #264653;
+  border-radius: 8px;
+  text-align: center;
+}
+.extra-a {
+  flex-grow: 2;                     /* 12 flex-grow */
+  flex-shrink: 1;                   /* 13 flex-shrink */
+  flex-basis: 200px;                /* 14 flex-basis */
+  order: 3;                         /* 11 order */
+}
+.extra-b {
+  flex: 1 1 150px;                  /* 15 flex (atalho: grow shrink basis) */
+  order: 2;
+}
+.extra-c {
+  flex: 0 1 180px;
+  align-self: flex-end;             /* 16 align-self */
+  order: 1;
+}
+
+.rodape {
+  display: flex;
+  justify-content: center;
+  background: #264653;
+  color: #fff;
+  padding: 14px;
+}
+.rodape p { margin: 0; }
+
+/* ---------- PARTE 1: BOX MODEL ---------- */
+
+/* Base das caixas */
+.caixa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  border-style: solid;
+}
+.num { font-size: 1.6rem; }
+.caixa p { margin: 4px 0 0; font-size: .85rem; }
+
+/* 20 elementos, cada um com valores em:
+   CONTENT : width, height
+   PADDING : padding-top/right/bottom/left
+   BORDER  : border-width, border-style, border-color, border-radius
+   MARGIN  : margin-top/right/bottom/left */
+
+.caixa-1 {
+  /* Content */
+  width: 110px;
+  height: 80px;
+  /* Padding */
+  padding-top: 8px;
+  padding-right: 11px;
+  padding-bottom: 9px;
+  padding-left: 12px;
+  /* Border */
+  border-width: 3px;
+  border-style: dashed;
+  border-color: #06d6a0;
+  border-radius: 6px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  margin-left: 7px;
+  background-color: #e63946;
+}
+.caixa-2 {
+  /* Content */
+  width: 120px;
+  height: 90px;
+  /* Padding */
+  padding-top: 11px;
+  padding-right: 14px;
+  padding-bottom: 13px;
+  padding-left: 16px;
+  /* Border */
+  border-width: 4px;
+  border-style: dotted;
+  border-color: #ef476f;
+  border-radius: 12px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  background-color: #f4a261;
+}
+.caixa-3 {
+  /* Content */
+  width: 130px;
+  height: 100px;
+  /* Padding */
+  padding-top: 14px;
+  padding-right: 17px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  /* Border */
+  border-width: 5px;
+  border-style: double;
+  border-color: #118ab2;
+  border-radius: 18px;
+  /* Margin */
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  background-color: #e9c46a;
+}
+.caixa-4 {
+  /* Content */
+  width: 140px;
+  height: 70px;
+  /* Padding */
+  padding-top: 5px;
+  padding-right: 20px;
+  padding-bottom: 9px;
+  padding-left: 8px;
+  /* Border */
+  border-width: 6px;
+  border-style: groove;
+  border-color: #ffd166;
+  border-radius: 0px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 4px;
+  margin-bottom: 12px;
+  margin-left: 7px;
+  background-color: #2a9d8f;
+}
+.caixa-5 {
+  /* Content */
+  width: 100px;
+  height: 80px;
+  /* Padding */
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 13px;
+  padding-left: 12px;
+  /* Border */
+  border-width: 2px;
+  border-style: ridge;
+  border-color: #073b4c;
+  border-radius: 6px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  background-color: #264653;
+}
+.caixa-6 {
+  /* Content */
+  width: 110px;
+  height: 90px;
+  /* Padding */
+  padding-top: 11px;
+  padding-right: 11px;
+  padding-bottom: 5px;
+  padding-left: 16px;
+  /* Border */
+  border-width: 3px;
+  border-style: inset;
+  border-color: #fb5607;
+  border-radius: 12px;
+  /* Margin */
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  background-color: #8338ec;
+}
+.caixa-7 {
+  /* Content */
+  width: 120px;
+  height: 100px;
+  /* Padding */
+  padding-top: 14px;
+  padding-right: 14px;
+  padding-bottom: 9px;
+  padding-left: 20px;
+  /* Border */
+  border-width: 4px;
+  border-style: outset;
+  border-color: #9b5de5;
+  border-radius: 18px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  margin-left: 7px;
+  background-color: #ff006e;
+}
+.caixa-8 {
+  /* Content */
+  width: 130px;
+  height: 70px;
+  /* Padding */
+  padding-top: 5px;
+  padding-right: 17px;
+  padding-bottom: 13px;
+  padding-left: 8px;
+  /* Border */
+  border-width: 5px;
+  border-style: solid;
+  border-color: #00bbf9;
+  border-radius: 0px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 4px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: #3a86ff;
+}
+.caixa-9 {
+  /* Content */
+  width: 140px;
+  height: 80px;
+  /* Padding */
+  padding-top: 8px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  /* Border */
+  border-width: 6px;
+  border-style: dashed;
+  border-color: #f15bb5;
+  border-radius: 6px;
+  /* Margin */
+  margin-top: 4px;
+  margin-right: 6px;
+  margin-bottom: 12px;
+  margin-left: 4px;
+  background-color: #06d6a0;
+}
+.caixa-10 {
+  /* Content */
+  width: 100px;
+  height: 90px;
+  /* Padding */
+  padding-top: 11px;
+  padding-right: 8px;
+  padding-bottom: 9px;
+  padding-left: 16px;
+  /* Border */
+  border-width: 2px;
+  border-style: dotted;
+  border-color: #588157;
+  border-radius: 12px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  margin-left: 7px;
+  background-color: #ef476f;
+}
+.caixa-11 {
+  /* Content */
+  width: 110px;
+  height: 100px;
+  /* Padding */
+  padding-top: 14px;
+  padding-right: 11px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  /* Border */
+  border-width: 3px;
+  border-style: double;
+  border-color: #bc6c25;
+  border-radius: 18px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  background-color: #118ab2;
+}
+.caixa-12 {
+  /* Content */
+  width: 120px;
+  height: 70px;
+  /* Padding */
+  padding-top: 5px;
+  padding-right: 14px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  /* Border */
+  border-width: 4px;
+  border-style: groove;
+  border-color: #6d6875;
+  border-radius: 0px;
+  /* Margin */
+  margin-top: 4px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+  background-color: #ffd166;
+}
+.caixa-13 {
+  /* Content */
+  width: 130px;
+  height: 80px;
+  /* Padding */
+  padding-top: 8px;
+  padding-right: 17px;
+  padding-bottom: 9px;
+  padding-left: 12px;
+  /* Border */
+  border-width: 5px;
+  border-style: ridge;
+  border-color: #e63946;
+  border-radius: 6px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  margin-left: 7px;
+  background-color: #073b4c;
+}
+.caixa-14 {
+  /* Content */
+  width: 140px;
+  height: 90px;
+  /* Padding */
+  padding-top: 11px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 16px;
+  /* Border */
+  border-width: 6px;
+  border-style: inset;
+  border-color: #f4a261;
+  border-radius: 12px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  background-color: #fb5607;
+}
+.caixa-15 {
+  /* Content */
+  width: 100px;
+  height: 100px;
+  /* Padding */
+  padding-top: 14px;
+  padding-right: 8px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  /* Border */
+  border-width: 2px;
+  border-style: outset;
+  border-color: #e9c46a;
+  border-radius: 18px;
+  /* Margin */
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  background-color: #9b5de5;
+}
+.caixa-16 {
+  /* Content */
+  width: 110px;
+  height: 70px;
+  /* Padding */
+  padding-top: 5px;
+  padding-right: 11px;
+  padding-bottom: 9px;
+  padding-left: 8px;
+  /* Border */
+  border-width: 3px;
+  border-style: solid;
+  border-color: #2a9d8f;
+  border-radius: 0px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 4px;
+  margin-bottom: 6px;
+  margin-left: 7px;
+  background-color: #00bbf9;
+}
+.caixa-17 {
+  /* Content */
+  width: 120px;
+  height: 80px;
+  /* Padding */
+  padding-top: 8px;
+  padding-right: 14px;
+  padding-bottom: 13px;
+  padding-left: 12px;
+  /* Border */
+  border-width: 4px;
+  border-style: dashed;
+  border-color: #264653;
+  border-radius: 6px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  background-color: #f15bb5;
+}
+.caixa-18 {
+  /* Content */
+  width: 130px;
+  height: 90px;
+  /* Padding */
+  padding-top: 11px;
+  padding-right: 17px;
+  padding-bottom: 5px;
+  padding-left: 16px;
+  /* Border */
+  border-width: 5px;
+  border-style: dotted;
+  border-color: #8338ec;
+  border-radius: 12px;
+  /* Margin */
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  background-color: #588157;
+}
+.caixa-19 {
+  /* Content */
+  width: 140px;
+  height: 100px;
+  /* Padding */
+  padding-top: 14px;
+  padding-right: 20px;
+  padding-bottom: 9px;
+  padding-left: 20px;
+  /* Border */
+  border-width: 6px;
+  border-style: double;
+  border-color: #ff006e;
+  border-radius: 18px;
+  /* Margin */
+  margin-top: 7px;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  margin-left: 7px;
+  background-color: #bc6c25;
+}
+.caixa-20 {
+  /* Content */
+  width: 100px;
+  height: 70px;
+  /* Padding */
+  padding-top: 5px;
+  padding-right: 8px;
+  padding-bottom: 13px;
+  padding-left: 8px;
+  /* Border */
+  border-width: 2px;
+  border-style: groove;
+  border-color: #3a86ff;
+  border-radius: 0px;
+  /* Margin */
+  margin-top: 10px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  background-color: #6d6875;
+}
+
+/* ---------- RESPONSIVIDADE (Flexbox + media queries) ---------- */
+@media (max-width: 700px) {
+  .cabecalho { flex-direction: column; gap: 10px; }
+  .extras { flex-direction: column; align-items: stretch; }
+  .extra-c { align-self: center; }
+}
+@media (max-width: 420px) {
+  .container { flex-direction: column; align-items: center; }
+}
